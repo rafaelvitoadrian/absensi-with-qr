@@ -20,7 +20,10 @@ use Illuminate\Support\Facades\Route;
 // Route Mahasiswa Baru 
 Route::prefix('admin')->group(function () {
     Route::resource('mahasiswa', \App\Http\Controllers\Admin\MahasiswaController::class);
+    
 });
+
+Route::get('mahasiswa/cetak',[\App\Http\Controllers\Admin\MahasiswaController::class,'cetak'])->name('mahasiswa.cetak');
 
 // Route Validasi dengan QR
 // Validasi QR 1 (Hari Pertama)

@@ -10,14 +10,15 @@
             <div class="card-body">
                 <div class="row mb-3">
                     <div class="col-md-8 d-flex justify-content-start">
-                        <a href="{{route('mahasiswa.create')}}" class="btn btn-primary mb-2"> +</a>
+                        <a href="{{route('mahasiswa.create')}}" class="btn btn-primary mx-2"> <i class="bi bi-plus-circle"></i></a>
+                        <a href="{{ route('mahasiswa.cetak') }}" target="_blank" class="btn btn-success"><i class="bi bi-printer"></i></a>
                     </div>
                     <div class="col-md-4 d-flex justify-content-end">
                         <form method="GET">
                             <div class="col-12">
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="cari" id="cari" placeholder="Search Users" value={{ $cari }} >
-                                    <button class="btn btn-primary" name="submit" type="submit">cari</button>
+                                    <button class="btn btn-primary" name="submit" type="submit"><i class="bi bi-search"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -46,11 +47,11 @@
                                     <td>{{$s->absen3}}</td>
                                     <td>
                                         <form action="{{route ('mahasiswa.destroy', $s->id)  }}" method="POST">
-                                            <a href="{{ route ('mahasiswa.show', $s->id) }}" class="btn btn-round btn-primary mb-xs-2" > Tampilkan </a>
-                                            <a href="{{route('mahasiswa.edit', $s->id)}}" class="btn btn-success">Edit </a>
+                                            <a href="{{ route ('mahasiswa.show', $s->id) }}" class="btn btn-round btn-primary mb-xs-2" > <i class="bi bi-eye"></i> </a>
+                                            <a href="{{route('mahasiswa.edit', $s->id)}}" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
                                             @csrf
                                             @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>

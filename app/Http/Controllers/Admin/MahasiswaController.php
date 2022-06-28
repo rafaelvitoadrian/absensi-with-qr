@@ -41,6 +41,12 @@ class MahasiswaController extends Controller
         ]);
     }
 
+    public function cetak()
+    {
+        $datasiswa = Mahasiswa::all();
+        return view('mahasiswa.cetak',compact('datasiswa'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
