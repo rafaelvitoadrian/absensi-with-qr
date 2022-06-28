@@ -4,23 +4,25 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h2>Tambah Data Mahasiswa Baru 2020</h2>
+                <h2>Ubah Data Mahasiswa Baru 2020</h2>
             </div>
             <div class="card-body">
-                <form action="{{route('mahasiswa.store')}}" method="post">
+                <form action="{{ route('mahasiswa.update',$siswa->id) }}" method="post">
                     @csrf
+                    @method('PUT')
                     <div class="container mt-4">
-                        <div class="form-floating mb-3">
+                        <div class="mb-3">
                             <label for="nim">NIM</label>
-                            <input type="text" class="form-control" id="nim" name="nim">
+                            <input type="text" class="form-control" value="{{ $siswa->nim }}" id="nim" name="nim">
                         </div>
-                        <div class="form-floating mb-3">
+                        <div class="mb-3">
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama">
+                            <input type="text" class="form-control" value="{{ $siswa->nama }}" id="nama" name="nama">
                         </div>
                         <div class="form-group mb-2">
                             <label for="exampleSelectRounded0">Program Studi</label>
                             <select class="custom-select rounded-0" id="exampleSelectRounded0" name="prodi">
+                                <option>{{ $siswa->prodi }}</option>
                                 <option value="Teknik Informasi">Teknik Infromatika</option>
                                 <option value="Sistem Informasi">Sistem Infromasi</option>
                             </select>

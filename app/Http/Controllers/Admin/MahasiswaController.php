@@ -90,8 +90,8 @@ class MahasiswaController extends Controller
      */
     public function edit($id)
     {
-        $datasiswa = Mahasiswa  ::find($id);
-        return view('siswa.form_ubah', ['siswa'=>$datasiswa]);
+        $datasiswa = Mahasiswa::find($id);
+        return view('mahasiswa.ubah', ['siswa'=>$datasiswa]);
     }
 
     /**
@@ -109,7 +109,7 @@ class MahasiswaController extends Controller
         $siswa->prodi = $request->prodi;
         $siswa->save();
 
-        return redirect()->route('siswa.index');
+        return redirect()->route('mahasiswa.index');
     }
 
     /**
