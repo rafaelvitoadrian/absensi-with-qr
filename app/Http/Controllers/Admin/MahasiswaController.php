@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
+date_default_timezone_set('Asia/Jakarta');
+
 class MahasiswaController extends Controller
 {
     /**
@@ -46,6 +48,13 @@ class MahasiswaController extends Controller
         $datasiswa = Mahasiswa::all();
         return view('mahasiswa.cetak',compact('datasiswa'));
     }
+
+    public function cetakqr($id){
+        $siswa = Mahasiswa::where('id',$id)->first();
+        return view('mahasiswa.cetakqr',['siswa' => $siswa]);
+    }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -134,7 +143,8 @@ class MahasiswaController extends Controller
     public function validasiQR(Request $request)
     {
 //        dd($request->qr_code);
-        $absen = "hadir";
+        $waktu = date('H:i');
+        $absen = "Hadir $waktu";
 
         $mahasiswa = Mahasiswa::where('qr_code', $request->qr_code)->first();
         $mahasiswa->absen1 = $absen;
@@ -154,7 +164,9 @@ class MahasiswaController extends Controller
     public function validasiQR2(Request $request)
     {
 //        dd($request->qr_code);
-        $absen = "hadir";
+        
+        $waktu = date('H:i');
+        $absen = "Hadir $waktu";
 
         $mahasiswa = Mahasiswa::where('qr_code', $request->qr_code)->first();
         $mahasiswa->absen2 = $absen;
@@ -174,7 +186,8 @@ class MahasiswaController extends Controller
     public function validasiQR3(Request $request)
     {
 //        dd($request->qr_code);
-        $absen = "hadir";
+        $waktu = date('H:i');
+        $absen = "Hadir $waktu";
 
         $mahasiswa = Mahasiswa::where('qr_code', $request->qr_code)->first();
         $mahasiswa->absen3 = $absen;

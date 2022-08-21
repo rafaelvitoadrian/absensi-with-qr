@@ -18,14 +18,18 @@
 
     function onScanSuccess(decodedText, decodedResult) {
             $("#result").val(decodedText)
+            
+            // $t=time();
+            // alert($t . "<br>");
+            // alert(date("Y-m-d",$t));
 
             let id= decodedText
 
             csrf_token = $('meta[name="csrf-token"]').attr('content');
 
             Swal.fire({
-                title : 'succes',
-                text : 'Berhasiil Scanner',
+                title : 'Success',
+                text : 'Berhasil Scan!',
                 confirmButtonColor:'#3085d6',
                 confirmButtonText:'Ok',
             }).then((result)=>{
@@ -44,15 +48,15 @@
                             if(response.status_error){
                                 Swal.fire({
                                     type: 'error',
-                                    title : 'Oopsss!',
-                                    text : 'qr code tidak ditemukan'
+                                    title : 'Oh, tidak!',
+                                    text : 'QR code tidak ditemukan.'
                                 })
                             }
                             Swal.fire({
-                                icon : 'success',
+                                icon : 'Success',
                                 type : 'succes',
-                                title : 'Succes!',
-                                text : 'Berhasil Absen'
+                                title : 'Success!',
+                                text : 'Berhasil Absen!'
                             });
                         }
                     })

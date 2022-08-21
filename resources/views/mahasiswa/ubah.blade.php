@@ -22,8 +22,8 @@
                         <div class="form-group mb-2">
                             <label for="exampleSelectRounded0">Program Studi</label>
                             <select class="custom-select rounded-0" id="exampleSelectRounded0" name="prodi">
-                                <option>{{ $siswa->prodi }}</option>
-                                <option value="Teknik Informasi">Teknik Infromatika</option>
+                                <option value="Ilmu Komputer" disabled>-----Pilih Prodi-----</option>
+                                <option value="Teknik Informatika">Teknik Infromatika</option>
                                 <option value="Sistem Informasi">Sistem Infromasi</option>
                             </select>
                         </div>

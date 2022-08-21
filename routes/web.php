@@ -43,7 +43,10 @@ Route::prefix('operator')->middleware('can:isAdminOperator')->group(function () 
     Route::get('/scan3',[\App\Http\Controllers\Admin\MahasiswaController::class,'scan3'])->name('scan3');
 });
 
+
 Auth::routes(['register'=> false, 'reset' => false]);
+
+
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

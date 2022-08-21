@@ -11,18 +11,18 @@
                     @csrf
                     <div class="container mt-4">
                         <div class="form-floating mb-3">
-                            <label for="nim">NIM</label>
-                            <input type="text" class="form-control" id="nim" name="nim">
-                        </div>
+                            <p><b>NIM</b></p>
+                            <input type="text" class="form-control" id="nim" name="nim" placeholder="">
+                        </div>    
                         <div class="form-floating mb-3">
-                            <label for="nama">Nama</label>
+                            <p><b>Nama</b></p>
                             <input type="text" class="form-control" id="nama" name="nama">
                         </div>
                         <div class="form-group mb-2">
                             <label for="exampleSelectRounded0">Program Studi</label>
                             <select class="custom-select rounded-0" id="exampleSelectRounded0" name="prodi">
-                                <option value="Teknik Informasi">Teknik Infromatika</option>
-                                <option value="Sistem Informasi">Sistem Infromasi</option>
+                                <option value="Teknik Informasi">Teknik Informatika</option>
+                                <option value="Sistem Informasi">Sistem Informasi</option>
                             </select>
                         </div>
                         <button class="btn btn-primary mr-1" name="submit" type="submit">Submit</button>

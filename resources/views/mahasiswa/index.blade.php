@@ -17,8 +17,13 @@
                         <form method="GET">
                             <div class="col-12">
                                 <div class="input-group">
+                                    <button type="submit" class="btn btn-primary mx-4">
+                                        Filter
+                                    </button>
+                                    <br>
                                     <input type="text" class="form-control" name="cari" id="cari" placeholder="Search Users" value={{ $cari }} >
                                     <button class="btn btn-primary" name="submit" type="submit"><i class="bi bi-search"></i></button>
+                                
                                 </div>
                             </div>
                         </form>

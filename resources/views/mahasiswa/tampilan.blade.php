@@ -6,6 +6,9 @@
         <div class="row my-5">
             <div class="col-md-12 d-flex align-content-center justify-content-center">
                 {!! \SimpleSoftwareIO\QrCode\Facades\QrCode::size(500)->generate($siswa->qr_code) !!}
+                {{-- <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(200)->generate($siswa->qr_code)) !!} "> --}}
+
+
             </div>
         </div>
         <div class="row my-5">
