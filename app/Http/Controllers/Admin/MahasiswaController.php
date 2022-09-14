@@ -79,7 +79,8 @@ class MahasiswaController extends Controller
             'qr_code' => $qr_code,
             'nim' => $request->nim,
             'nama' => $request->nama,
-            'prodi' => $request->prodi
+            'prodi' => $request->prodi,
+            'kelompok' => $request->kelompok
         ]);
 
         return redirect()->route('mahasiswa.index');
@@ -122,6 +123,7 @@ class MahasiswaController extends Controller
         $siswa->nim = $request->nim;
         $siswa->nama = $request->nama;
         $siswa->prodi = $request->prodi;
+        $siswa->kelompok = $request->kelompok;
         $siswa->save();
 
         return redirect()->route('mahasiswa.index');

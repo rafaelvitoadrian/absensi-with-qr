@@ -10,16 +10,47 @@
             <div class="card-body">
                 <div class="row mb-3">
                     <div class="col-md-8 d-flex justify-content-start">
-                        <a href="{{route('mahasiswa.create')}}" class="btn btn-primary mx-2"> <i class="bi bi-plus-circle"></i></a>
-                        <a href="{{ route('mahasiswa.cetak') }}" target="_blank" class="btn btn-success"><i class="bi bi-printer"></i></a>
+                        <a href="/admin/mahasiswa/create" class="btn btn-primary mx-2"> <i class="bi bi-plus-circle"></i></a>
+                        <a href="/admin/mahasiswa/cetak" target="_blank" class="btn btn-success"><i class="bi bi-printer"></i></a>
                     </div>
                     <div class="col-md-4 d-flex justify-content-end">
                         <form method="GET">
                             <div class="col-12">
                                 <div class="input-group">
-                                    <button type="submit" class="btn btn-primary mx-4">
-                                        Filter
-                                    </button>
+                                    {{-- <button type="submit" class="btn btn-primary mx-4">
+                                        <li class="nav-item dropdown">
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                Filter
+                                            </a>
+            
+                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                                    Absen 1 Hadir
+                                                </a>
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                                    Absen 2 Hadir
+                                                </a>
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                                    Absen 1 Tidak Hadir
+                                                </a>
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                                    Absen 2 Tidak Hadir
+                                                </a>
+            
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li>
+                                    </button> --}}
                                     <br>
                                     <input type="text" class="form-control" name="cari" id="cari" placeholder="Search Users" value={{ $cari }} >
                                     <button class="btn btn-primary" name="submit" type="submit"><i class="bi bi-search"></i></button>
@@ -36,6 +67,7 @@
                             <th>@sortablelink('nim','NIM')</th>
                             <th>@sortablelink('nama','Nama Mahasiswa')</th>
                             <th>@sortablelink('prodi','Program Studi')</th>
+                            <th>Kelompok</th>
                             <th>Absen 1</th>
                             <th>Absen 2</th>
                             <th>Absen 3</th>
@@ -47,6 +79,7 @@
                                     <td>{{$s->nim}}</td>
                                     <td>{{$s->nama}}</td>
                                     <td>{{$s->prodi}}</td>
+                                    <td>{{$s->kelompok}}</td>
                                     <td>{{$s->absen1}}</td>
                                     <td>{{$s->absen2}}</td>
                                     <td>{{$s->absen3}}</td>

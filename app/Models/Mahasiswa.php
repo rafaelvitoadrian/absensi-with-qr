@@ -19,6 +19,7 @@ class Mahasiswa extends Model
         'nim',
         'nama',
         'prodi',
+        'kelompok',
         'absen1',
         'absen2',
         'absen3',
@@ -27,6 +28,10 @@ class Mahasiswa extends Model
     public $sortable =[
         'nim',
         'nama',
-        'prodi'
+        'prodi',
+        'kelompok',
+        'absen1',
+        'absen2',
+        'absen3',
     ];
 }

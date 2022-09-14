@@ -19,6 +19,7 @@
                             <th>NIM</th>
                             <th>Nama Mahasiswa</th>
                             <th>Prodi</th>
+                            <th>Kelompok</th>
                             <th>Absen 1</th>
                             <th>Absen 2</th>
                             <th>Absen 3</th>
@@ -28,6 +29,7 @@
                                     <td>{{$s->nim}}</td>
                                     <td>{{$s->nama}}</td>
                                     <td>{{$s->prodi}}</td>
+                                    <td>{{$s->kelompok}}</td>
                                     <td>{{$s->absen1}}</td>
                                     <td>{{$s->absen2}}</td>
                                     <td>{{$s->absen3}}</td>
